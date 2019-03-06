@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-db_uri ='mysql+pymysql://root:sapchow@localhost/blog'
+db_uri ='mysql+pymysql://sapchow:sapchow@localhost/blog'
 
 app.config['SQLALCHEMY_DATABASE_URI']=db_uri
 db = SQLAlchemy(app)
@@ -53,4 +53,4 @@ def addpost():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",port=8080,debug=True)
